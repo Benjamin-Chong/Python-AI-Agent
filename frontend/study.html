@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AI Agent - Introduction to Python</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet"> <!--importing the fonts-->
+    </head>
+    <body>
+        <nav>
+        <a href="homepage.html">Home</a> |
+        <a href="study.html">Study!</a> |
+        <a href="credits.html">Credits</a>
+        </nav>
+        <div class="center">
+        <h1>AI Agent For Python (beginners)</h1>
+        <p>Ask the AI any questions pertaining to Python (beginner level like syntax or basic concepts)<br> Example Question: What is the difference between a String and an Integer?</p>
+        <label for="userinput">Enter Here:</label>
+        <textarea id="userInput" placeholder="Type your question here..."></textarea>
+        <button type="button">Ask a Question</button>
+        </div>
+    </body>
+    <script>
+        const ta = document.getElementById("userInput");
+
+        ta.addEventListener("input", () => {
+            ta.style.height = "auto";    // reset height
+            ta.style.height = ta.scrollHeight + "px"; // expand to fit content
+        });
+    </script>
+</html>

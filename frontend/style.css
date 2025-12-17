@@ -1,0 +1,147 @@
+:root {
+    /* MATCHA GREENS */
+    --primary_matcha:   #8FBF7A;   /* fresh matcha latte green */
+    --secondary_matcha: #c2ee9f;   /* matcha foam / steamed milk */
+
+    /* CREAMS & LATTE TONES */
+    --cream_light:      #FFF9ED;   /* milk foam cream */
+    --cream_deep:       #F4E7CF;   /* warm latte cream */
+
+    /* CAFÉ BROWNS */
+    --primary_brown:    #A48363;   /* caramel brown */
+    --secondary_brown:  #8A7258;   /* wood brown */
+
+    /* TEXT */
+    --text_dark:        #2F2C28;   /* soft charcoal (not pure black) */
+    --text_light:       #FFF9ED;   /* cream for dark backgrounds */
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:'Noto Sans JP', sans-serif;
+    color: var(--primary_matcha);
+    margin: 0 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    background: var(--primary_matcha);
+    color: var(--text_light);
+    font-family:'Noto Sans JP', serif;
+}
+
+button {
+    background: var(--primary_matcha);
+    width: fit-content;
+    color: var(--text_dark);
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--secondary_matcha);
+    color: var(--text_dark);
+}
+
+textarea {
+    background: var(--text_light);
+    font-family:'Noto Sans JP', serif;
+    color: var(--secondary_brown);
+    border: 3px solid var(--primary_brown);
+
+    min-height: 100px;
+    max-height: 250px;
+    resize: none;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 12px;
+
+    line-height: 1.6;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Text Area ScrollBar */
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: var(--primary_matcha);
+  border-radius: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: var(--primary_brown);
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary_brown);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 20px;
+    font-family:'Noto Sans JP', serif;
+    background: var(--primary_brown);   
+    color: var(--primary_matcha);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 2px solid var(--text_dark);
+
+}
+
+nav a {
+    color: var(--primary_matcha);
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: var(--primary_matcha);
+}
+
+nav a:hover {
+    color: var(--secondary_matcha);
+    text-decoration: underline;
+}
+
+/* Home Page */
+/* Study Page */
+/* Credit Page */
+.credit_link {
+    color: var(--primary_matcha);
+    text-decoration: none;
+}
+
+.credit_link:visited {
+    color: var(--primary_matcha);
+}
+
+.credit_link:hover{
+    color: var(--secondary_matcha);
+    text-decoration: underline;
+}
+/* All pages */
+.center {
+    display: flex;
+    flex-direction: column;
+    background: var(--secondary_brown);
+    border: 2px solid var(--text_dark);
+    padding: 32px 40px;
+    border-radius: 12px;
+    width: 65%;
+    gap: 10px;
+}
+
+.center p {
+    line-height: 1.4;
+}
+
