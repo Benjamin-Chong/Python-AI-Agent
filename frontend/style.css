@@ -12,7 +12,7 @@
     --secondary_brown:  #8A7258;   /* wood brown */
 
     /* TEXT */
-    --text_dark:        #2F2C28;   /* soft charcoal (not pure black) */
+    --text_dark:        #3C4A3E;   /* soft charcoal (not pure black) */
     --text_light:       #FFF9ED;   /* cream for dark backgrounds */
 }
 
@@ -37,6 +37,8 @@ button {
     width: fit-content;
     color: var(--text_dark);
     border-radius: 5px;
+    font-family:'Noto Sans JP', serif;
+
 }
 
 button:hover {
