@@ -15,17 +15,50 @@
         <div class="center">
         <h1>AI Agent For Python (beginners)</h1>
         <p>Ask the AI any questions pertaining to Python (beginner level like syntax or basic concepts)<br> Example Question: What is the difference between a String and an Integer?</p>
-        <label for="userinput">Enter Here:</label>
+        <label for="userInput">Enter Here:</label>
         <textarea id="userInput" placeholder="Type your question here..."></textarea>
-        <button type="button">Ask a Question</button>
+        <button id="ask-button" type="button">Ask a Question</button>
+        <div id="answer-box"></div>
         </div>
-    </body>
-    <script>
-        const ta = document.getElementById("userInput");
+        
+        <script>
+            const ta = document.getElementById("userInput");
 
-        ta.addEventListener("input", () => {
-            ta.style.height = "auto";    // reset height
-            ta.style.height = ta.scrollHeight + "px"; // expand to fit content
-        });
-    </script>
+            ta.addEventListener("input", () => {
+                ta.style.height = "auto";    // reset height
+                ta.style.height = ta.scrollHeight + "px"; // expand to fit content
+            });
+        </script>
+
+        <script>
+            console.log("JS LOADED");
+            const button = document.getElementById("ask-button")
+            const input = document.getElementById("userInput")
+            const answerBox = document.getElementById("answer-box")
+
+            button.addEventListener("click", async () => {
+                const question = input.value.trim();
+                if (!question) {
+                    answerBox.textContent = "Invalid Question."
+                } return;
+
+                answerBox.textContent = "Thinking...";
+
+                try {
+                    const response = await fetch("http://localhost:8000/ask", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({question: question}),
+                    });
+                const data = await response.json();
+                answerBox.textContent = data.answer;
+                } catch (error) {
+                    answerBox.textContent = "Error contacting server."
+                    console.error(error);
+                }
+            })
+        </script>
+    </body>
 </html>
