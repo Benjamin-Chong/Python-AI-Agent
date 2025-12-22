@@ -31,34 +31,33 @@
         </script>
 
         <script>
-            console.log("JS LOADED");
-            const button = document.getElementById("ask-button")
-            const input = document.getElementById("userInput")
-            const answerBox = document.getElementById("answer-box")
+        const button = document.getElementById("ask-button");
+        const input = document.getElementById("userInput");
+        const answerBox = document.getElementById("answer-box");
 
-            button.addEventListener("click", async () => {
-                const question = input.value.trim();
-                if (!question) {
-                    answerBox.textContent = "Invalid Question."
-                } return;
+        button.addEventListener("click", async () => {
+            const question = input.value.trim();
+            if (!question) {
+                answerBox.textContent = "Invalid Question."
+                return;
+            }
 
-                answerBox.textContent = "Thinking...";
+            answerBox.textContent = "Thinking...";
 
-                try {
-                    const response = await fetch("http://localhost:8000/ask", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({question: question}),
-                    });
-                const data = await response.json();
-                answerBox.textContent = data.answer;
-                } catch (error) {
-                    answerBox.textContent = "Error contacting server."
-                    console.error(error);
-                }
-            })
+            try {
+            const response = await fetch("http://localhost:8000/ask", {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ question }),
+            });
+            const data = await response.json();
+            answerBox.textContent = data.answer;
+            } catch (err) {
+            answerBox.textContent = "Error contacting server.";
+            }
+        });
         </script>
     </body>
 </html>
