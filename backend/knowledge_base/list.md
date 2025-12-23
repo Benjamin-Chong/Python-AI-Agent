@@ -1,29 +1,35 @@
 # Lists
-- lists are one of the few data types
-- allows duplicate members
+- Lists are one of the few collection data types
+- Allows duplicate members
+- Can be changed after creation (mutable)
 
 ## Declaration
-- list can be declared in two ways: my_list = [] or my_list = list()
+- Can be declared in two ways: `my_list = []` or `my_list = list()`
 
-## Accessing using index
-- lists are indexed at 0, which means that 0 is the first element
-- also can be accessed using negative index
+## Accessing Using Index
+- Lists are indexed at 0, which means that 0 is the first element
+- Also can be accessed using negative index
 
 ## Slicing
-- refer back to the string.md for slicing
-- slicing rules are the exact same for lists.
+- Refer back to the string.md for slicing
+- Slicing rules are the exact same for lists
+- Example:
+```python
+graphics_cards = ['3080 ti', '4070 ti', '5090']
+sliced = [0:1] #returns 3080 ti and 4070 ti
+```
 
-## Modifying an  element
+## Modifying An Element
 - can be done by using:
 ```python
 my_list[0] = 'Changed'
 ```
 
-## Adding to the list
-- append() will add to the list (end)
-- insert(index, your_insertion)
+## Adding To The List
+- append() will add to the list (adds to the end)
+- insert(index, your_insertion) 
 
-## Removing from a list
+## Removing From A List
 - remove(item): removes an item matching the item
 - pop(index): removes the item at the index (note: index is optional, will default to last element on the list) 
 - del my_list[index]: used to remove an index or can be delete the list using del my_list

@@ -1,33 +1,33 @@
 # Loops
-- these are fundamental for solving problems.
-- repetitve things can be solved using a loop.
-- two types of loops: for and while loop
+- Loops are fundamental for solving repetitive problems
+- Two types of loops: for and while loop
 
-## For loop
-- can iterate over a sequence (list, tuple, etc)
+## For Loop
+- Can iterate over a sequence (list, tuple, etc)
 
-### Declation
+### Declaration
 - for __ in __:
-- the first item is the iterator and the second part is the sequence.
+- The first item is the iterator and the second part is the sequence
 
-## While loop
-- iterates while a condition is true and stops once it is false.
+## While Loop
+- Iterates while a condition is true and stops once it is false
 
 ### Declaration
 - while your_condition:
 
 ## Break
-- break stops the loop before it is complete
+- `break` stops the loop before it is complete
 
 ## Continue
-- skips the current iteration and moves onto the next iteration
+- `continue` skips the current iteration and moves onto the next iteration
 
 ## Range function
-- used to create a list of numbers
-- syntax: range(start, end, step_sequence) #does not include the final number
+- Used to create a list of numbers
+- Commonly used with for loops
+- Syntax: range(start, end, step_sequence) #does not include the final number
 
 ## For else
-- when the for loop ends, the else statement will execute
+- When the for loop ends, the else statement will execute if no `break` is encountered
 
 ## Pass
-- pass is used as a way to act as a placeholder to prevent errors when writing loops.
+- `pass` is used as a way to act as a placeholder to prevent errors when writing loops.

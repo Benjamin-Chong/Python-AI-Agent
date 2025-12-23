@@ -1,24 +1,29 @@
 # Operators
-Operators allow Python to perform mathematical calculations such as adding and subtracting
+- Operators allow Python to perform mathematical calculations, such as adding and subtracting
 
 ## Types of Operators
-- there are many types of operators. There are assignment operators, arithmetic operators, comparison operators, and logical operators.
+- There are many types of operators. 
+- There are assignment operators, arithmetic operators, comparison operators, and logical operators.
 
 ### Assignment Operators
-- these operators are meant to assign something to a variable. An example is x = 5.
+- These operators are meant to assign something to a variable. Example: `x = 5`
 - =
+
 ### Mathematical Assignment Operators
-- +=
-- -=
-- *=
-- /=
-- %=: mod operator. only remainder
-- //=: floor operator. no decimal
-- &=
-- |=
-- ^=
-- >>=
-- <<=
+- Used to update a variable by applying an operation to its current value
+
+- += (add and assign)
+- -= (subtract and assign)
+- *= (multiply and assign)
+- /= (divide and assign)
+- %= (modulus and assign — remainder only)
+- //= (floor divide and assign — no decimal)
+- **= (exponentiate and assign)
+- &= (bitwise AND and assign)
+- |= (bitwise OR and assign)
+- ^= (bitwise XOR and assign)
+- >>= (bitwise right shift and assign)
+- <<= (bitwise left shift and assign)
 
 ### Arithmetic Operators
 - + (addition)
@@ -38,6 +43,6 @@ Operators allow Python to perform mathematical calculations such as adding and s
 - <= (less than or equal to)
 
 ### Logical Operators
-- and: both statements need to be true to return true
-- or: only one statement needs to be true to return true
-- not: returns the opposite of the result
+- And: both statements need to be true to return true
+- Or: only one statement needs to be true to return true
+- Not: returns the opposite of the result

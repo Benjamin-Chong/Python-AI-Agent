@@ -1,28 +1,28 @@
 # Tuple
-- a tuple is a data collection that is ordered and is unchangeable.
+- A tuple is a data collection that is ordered and is unchangeable.
 
 ## Declaration
-- tuples are denoted by ()
-- or can be created using tuple()
+- Tuples are denoted by ()
+- Or can be created using tuple()
 
-## Accessing using index
-- same way as a list
-- negative indexing still applies
+## Accessing Using Index
+- Same way as a list
+- Negative indexing still applies
 
 ## Slicing
-- same way as a list
+- Same way as a list
 
-## Changing a tuple to a list
-- use list(tuple_name) to convert the tuple to a list
+## Changing A Tuple To A List
+- Use list(tuple_name) to convert the tuple to a list
 
 ## Checking for an item in a tuple
 ```python
  'string_chosen' in tuple_name #returns true if in tuple
 ```
 
-## Joining tuples
-- just use addition.
+## Joining Tuples
+- Just use addition operator.
 - Example: tuple1 + tuple2
 
-## Deleting tuples
-- same as a list
+## Deleting Tuples
+- Same as a list
