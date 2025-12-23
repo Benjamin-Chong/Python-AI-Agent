@@ -19,14 +19,10 @@
 h1, h2, h3, h4, h5 {
     font-family:'Noto Sans JP', sans-serif;
     color: var(--primary_matcha);
-    margin: 0 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
+    margin: 0 0;
     background: var(--primary_matcha);
     color: var(--text_light);
     font-family:'Noto Sans JP', serif;
@@ -50,7 +46,7 @@ textarea {
     background: var(--text_light);
     font-family:'Noto Sans JP', serif;
     color: var(--secondary_brown);
-    border: 3px solid var(--primary_brown);
+    border: 3px solid var(--primary_matcha);
 
     min-height: 100px;
     max-height: 250px;
@@ -92,13 +88,12 @@ nav {
     justify-content: center;
     gap: 12px;
     padding: 10px 20px;
-    font-family:'Noto Sans JP', serif;
     background: var(--primary_brown);   
     color: var(--primary_matcha);
     border-radius: 12px;
-    margin-bottom: 25px;
     border: 2px solid var(--text_dark);
-
+    width: fit-content;
+    margin: 25px auto;
 }
 
 nav a {
@@ -115,16 +110,71 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Layout */
+.layout {
+    display: flex;
+    padding: 24px;
+    gap: 12px;
+}
+
 /* Home Page */
 /* Study Page */
+#chat_history {
+    width: 35%;
+    max-height: 80vh;
+    background-color: var(--secondary_brown);
+    border-radius: 12px;
+    border: 2px solid var(--text_dark);
+    padding: 12px;
+    overflow-y: auto;
+}
+
+#chat_history::-webkit-scrollbar {
+  width: 10px;
+}
+
+#chat_history::-webkit-scrollbar-track {
+  background: var(--primary_matcha);
+  border-radius: 5px;
+}
+
+#chat_history::-webkit-scrollbar-thumb {
+  background: var(--cream_deep);
+  border-radius: 10px;
+}
+
+#chat_history::-webkit-scrollbar-thumb:hover {
+  background: var(--cream_light);
+}
+
 #answer-box {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border-radius: 5px;
+    padding: 10px;
+    min-height: 24px;
+    border: 2px solid var(--primary_matcha);
+    border-radius: 12px;
     background-color: var(--cream_light);
     white-space: pre-wrap;
     color: var(--primary_brown);
 }
+
+.message_user, .message_assistant {
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.message_user {
+  background-color: var(--secondary_matcha);
+  color: var(--text_dark);
+}
+
+.message_assistant {
+  background-color: var(--cream_light);
+  color: var(--primary_brown);
+}
+
 /* Credit Page */
 .credit_link {
     color: var(--primary_matcha);
@@ -139,7 +189,13 @@ nav a:hover {
     color: var(--secondary_matcha);
     text-decoration: underline;
 }
+
 /* All pages */
+.single_center {
+    display: flex;
+    justify-content: center;
+}
+
 .center {
     display: flex;
     flex-direction: column;
@@ -148,10 +204,20 @@ nav a:hover {
     padding: 32px 40px;
     border-radius: 12px;
     width: 65%;
-    gap: 10px;
+    overflow-y: auto;
+    gap: 12px;
 }
 
 .center p {
-    line-height: 1.4;
+    margin: 0 0 10px 0;
+}
+
+.center ul {
+    margin: 6px 0 12px 18px;
+    padding: 0;
+}
+
+.center li {
+    margin-bottom: 4px;
 }
 
