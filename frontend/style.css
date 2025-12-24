@@ -19,12 +19,16 @@
 h1, h2, h3, h4, h5 {
     font-family:'Noto Sans JP', sans-serif;
     color: var(--primary_matcha);
+    margin: 5px 0;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0 0;
     background: var(--primary_matcha);
     color: var(--text_light);
+    height: 100vh;
     font-family:'Noto Sans JP', serif;
 }
 
@@ -48,8 +52,8 @@ textarea {
     color: var(--secondary_brown);
     border: 3px solid var(--primary_matcha);
 
-    min-height: 100px;
-    max-height: 250px;
+    min-height: 50px;
+    max-height: 100px;
     resize: none;
     overflow: hidden;
     overflow-y: auto;
@@ -114,7 +118,7 @@ nav a:hover {
 .layout {
     display: flex;
     padding: 24px;
-    gap: 12px;
+    gap: 24px;
 }
 
 /* Home Page */
@@ -127,6 +131,7 @@ nav a:hover {
     border: 2px solid var(--text_dark);
     padding: 12px;
     overflow-y: auto;
+    
 }
 
 #chat_history::-webkit-scrollbar {
@@ -149,12 +154,13 @@ nav a:hover {
 
 #answer-box {
     padding: 10px;
-    min-height: 24px;
     border: 2px solid var(--primary_matcha);
     border-radius: 12px;
     background-color: var(--cream_light);
     white-space: pre-wrap;
     color: var(--primary_brown);
+    min-height: 50px;
+    max-height: 100px;
 }
 
 .message_user, .message_assistant {
@@ -193,7 +199,10 @@ nav a:hover {
 /* All pages */
 .single_center {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 24px;
 }
 
 .center {
@@ -209,15 +218,23 @@ nav a:hover {
 }
 
 .center p {
-    margin: 0 0 10px 0;
+    margin: 0 0 0 0;
 }
 
 .center ul {
-    margin: 6px 0 12px 18px;
+    margin: 0 0 0 0;
     padding: 0;
 }
 
 .center li {
-    margin-bottom: 4px;
+    margin: 0 0 0 0;
 }
 
+.footer {
+    background: var(--secondary_brown);
+    width: fit-content;
+    border-radius: 12px;
+    padding: 12px;
+    border: 2px solid var(--text_dark);
+    margin: auto auto 12px auto;
+}
