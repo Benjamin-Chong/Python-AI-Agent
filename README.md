@@ -81,8 +81,10 @@ This was an exploration project to explore a full stack application paired with 
 
 ### Getting Started
 1. Clone this repo.
+
 ![Clone button](assets/clone.png)
-*Click on <> Code First>*
+
+*Click on <> Code First*
 2. Download all of the required packages from requirements.txt
 3. Open your desired IDE.
 4. Start the frontend and backend servers using the following commands:
