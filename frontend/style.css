@@ -55,7 +55,6 @@ textarea {
     min-height: 50px;
     max-height: 100px;
     resize: none;
-    overflow: hidden;
     overflow-y: auto;
     border-radius: 12px;
 
@@ -121,7 +120,6 @@ nav a:hover {
     gap: 24px;
 }
 
-/* Home Page */
 /* Study Page */
 #chat_history {
     width: 35%;
@@ -159,10 +157,28 @@ nav a:hover {
     background-color: var(--cream_light);
     white-space: pre-wrap;
     color: var(--primary_brown);
-    min-height: 50px;
-    max-height: 100px;
+    min-height: 30px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
+#answer-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+#answer-box::-webkit-scrollbar-track {
+  background: var(--primary_matcha);
+  border-radius: 5px;
+}
+
+#answer-box::-webkit-scrollbar-thumb {
+  background: var(--primary_brown);
+  border-radius: 10px;
+}
+
+#answer-box:-webkit-scrollbar-thumb:hover {
+  background: var(--secondary_brown);
+}
 .message_user, .message_assistant {
   margin-bottom: 12px;
   padding: 8px 10px;
@@ -213,7 +229,6 @@ nav a:hover {
     padding: 32px 40px;
     border-radius: 12px;
     width: 65%;
-    overflow-y: auto;
     gap: 12px;
 }
 
