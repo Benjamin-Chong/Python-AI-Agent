@@ -82,7 +82,7 @@ This was an exploration project to explore a full stack application paired with 
 ### Getting Started
 1. Clone this repo.
 ![Clone button](assets/clone.png)
-* Click on <> Code First> *
+*Click on <> Code First>*
 2. Download all of the required packages from requirements.txt
 3. Open your desired IDE.
 4. Start the frontend and backend servers using the following commands:
@@ -93,7 +93,7 @@ This was an exploration project to explore a full stack application paired with 
 ![Start Study button](assets/study.png)
 6. Enter any beginner Python related question:
 ![Question Box](assets/question.png)
-* The answer will show up in the bottom box *
+*The answer will show up in the bottom box*
 7. The question and answer pair will be appended to the chat history on the left.
 ![Chat History](assets/chathistory.png)
 
