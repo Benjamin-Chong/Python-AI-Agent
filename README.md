@@ -94,7 +94,7 @@ This was an exploration project to explore a full stack application paired with 
 - Open: http://localhost:5500/frontend/homepage.html (frontend)
 5. Navigate to the study page using the green button labeled: 'Start Studying' or use the navigation bar at the top.
 ![Start Study button](assets/study.png)
-6. Enter any beginner Python related question:
+6. Enter any beginner Python related question (Note: give 5-10 seconds for the response):
 ![Question Box](assets/question.png)
 *The answer will show up in the bottom box*
 7. The question and answer pair will be appended to the chat history on the left.
@@ -102,3 +102,11 @@ This was an exploration project to explore a full stack application paired with 
 
 ### Tests
 (Continued)
+
+### Notes on System Limitations
+- This project does not cross-reference information across separate note chunks.
+  For example, a question like *“What is the difference between a string and an integer?”* may be declined if those concepts are defined in separate notes.
+- To improve trust and reduce hallucinations, the assistant only answers questions when all required information is present within the retrieved context.
+- Some comparison questions work when the relevant concepts are documented together.
+  For example, *“What is the difference between a for loop and a while loop?”* is answerable because both concepts are covered within the same note.
+

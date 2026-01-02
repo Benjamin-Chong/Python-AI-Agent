@@ -16,7 +16,18 @@ def generate_draft(question, notes): #generate the inital draft and call the llm
     return call_llm(system_prompt, user_prompt)
 
 def validate_answer(question, notes, draft): #takes the question, the notes, and the inital draft and fixes it and improves it
-    system_prompt = ("You are validating an answer. Compare the DRAFT to the NOTES." " Fix mistakes, fill gaps, and ensure accuracy." " Return an improved final answer." "If you say that you do not know based off of the notes, tell the user 'I do not know based off of the notes, however the answer I think is correct is ...'")
+    system_prompt = ("You are validating an answer using ONLY the provided NOTES.\n"
+    "Your task is to improve clarity and correctness ONLY IF the draft answer is supported by the notes.\n\n"
+
+    "CRITICAL RULES:\n"
+    "- If the draft answer states that the question cannot be answered based on the notes, DO NOT modify or expand it.\n"
+    "- In that case, return the draft answer exactly as written.\n"
+    "- Do NOT guess, infer, or introduce new information.\n\n"
+
+    "If the question is ambiguous AND the notes are insufficient, respond with:\n"
+    "'Please be more specific with your question.'\n\n"
+
+    "Otherwise, return a refined answer strictly grounded in the notes.")
     user_prompt = f"QUESTION:\n{question}\n\nNOTES:\n{notes}\n\nDRAFT ANSWER:\n{draft}"
     return call_llm(system_prompt, user_prompt)
 
