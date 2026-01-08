@@ -79,6 +79,7 @@ The priority was trust and transparency while still balancing a somewhat complet
 - Answers are transparent when information does not come from notes
 - No authentication or user persistence
 - Not intended to replace courses
+- The agent may refuse to answer certain questions if the relevant concept is not retrieved, even when the information exists elsewhere in the notes. This is an intentional design choice to prioritize grounded responses over completeness. A future improvement would involve splitting notes into smaller, concept-level chunks to improve retrieval recall without weakening trust guarantees.
 
 ## Future Improvements
 I created a list of potential features that could be added to the project if development were continued:
@@ -89,6 +90,11 @@ I created a list of potential features that could be added to the project if dev
 
 ## Why This Project
 This was an exploration project to build a full-stack application paired with AI features.
+
+## Performance Optimization
+- Persisting the vector store significantly improves performance by avoiding repeated ingestion work.
+- In local benchmarks, rebuilding the vector store on each request averaged ~11.9s, while reusing a persisted store averaged ~5.3s, representing an approximate 55% reduction in response latency.
+- This optimization becomes more impactful as the document corpus grows, since embedding computation and index construction scale with the number of files and chunks.
 
 ## Getting Started
 1. Clone this repository.
@@ -125,7 +131,6 @@ I created a few tests focusing on important parts of the program:
 
 ## Running Tests
 ```bash
-pip install -r requirements.txt
 python -m pytest
 ```
 ### Notes on System Limitations

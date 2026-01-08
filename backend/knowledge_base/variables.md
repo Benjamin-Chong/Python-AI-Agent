@@ -14,7 +14,7 @@
 - Python infers them automatically
 - Different data types represent different kinds of values (numbers, text, True / False, etc.)
 
-- int: used to hold whole numbers (e.g., -3, 0, 42)
+- integer: used to hold whole numbers (e.g., -3, 0, 42)
 - string: used to hold text data and must be enclosed in single quotes ('') or double quotes ("")
 - boolean: represents one of two values — True or False and is commonly used for conditions or state
 - float: used to represent decimal (floating-point)
@@ -23,7 +23,7 @@
 
 ### Casting
 - Converting a value from one data type to another
-- Example: converting an int to a string:
+- Example: converting an integer to a string:
 
 ```python
 number_in_int = 60

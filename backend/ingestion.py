@@ -33,4 +33,3 @@ def ingest(): #loads all of the files and adds to the collection.
 
 if __name__ == "__main__":
     ingest()
-

@@ -2,6 +2,7 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 from backend.retrieval import retrieve
+from backend.ingestion import ingest
 
 load_dotenv()
 client = OpenAI(api_key = os.getenv("OPENAI_KEY"))
@@ -32,7 +33,7 @@ def validate_answer(question, notes, draft): #takes the question, the notes, and
     return call_llm(system_prompt, user_prompt)
 
 def run_agent(question, debug=False): #runs the agent. 1. retrieves notes 2. creates draft 3. creates final answer.
-    results = retrieve(question, k = 3) 
+    results = retrieve(question, k = 3)
     if not results:
         return "No notes were retrieved."
     retrieved_docs = results["documents"][0]
