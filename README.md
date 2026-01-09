@@ -139,3 +139,5 @@ python -m pytest
 - To improve trust and reduce hallucinations, the assistant only answers questions when all required information is present within the retrieved context.
 - Some comparison questions work when the relevant concepts are documented together.
 - For example, “What is the difference between a for loop and a while loop?” is answerable because both concepts are covered within the same note.
+
+> Note: The backend is deployed on Railway using a free trial plan and may be paused when inactive. The application can be redeployed at any time.
