@@ -140,4 +140,8 @@ python -m pytest
 - Some comparison questions work when the relevant concepts are documented together.
 - For example, “What is the difference between a for loop and a while loop?” is answerable because both concepts are covered within the same note.
 
-> Note: The backend is deployed on Railway using a free trial plan and may be paused when inactive. The application can be redeployed at any time.
+## Live Demo
+Frontend: https://python-ai-agent-snowy.vercel.app
+Backend: https://python-ai-agent-production.up.railway.app
+
+> Note: The backend is hosted on Railway’s free tier and may take a few seconds to respond on first request due to cold starts.
