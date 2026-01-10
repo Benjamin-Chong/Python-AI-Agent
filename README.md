@@ -141,7 +141,8 @@ python -m pytest
 - For example, “What is the difference between a for loop and a while loop?” is answerable because both concepts are covered within the same note.
 
 ## Live Demo
-Frontend: https://python-ai-agent-snowy.vercel.app
-Backend: https://python-ai-agent-production.up.railway.app
+-Frontend: https://python-ai-agent-snowy.vercel.app
+-Backend: https://python-ai-agent-production.up.railway.app
 
-> Note: The backend is hosted on Railway’s free tier and may take a few seconds to respond on first request due to cold starts.
+> Note: The backend is hosted on Railway’s free tier and may take a few minutes to respond on first request due to cold starts.
+> Testing took about 2-3 minutes for the agent to build on the backend.
