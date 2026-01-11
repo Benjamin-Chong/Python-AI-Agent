@@ -1,148 +1,143 @@
-# Python AI Agent
+# Python AI Agent (Deployed)
 
-## Overview
-- A beginner-focused Python study assistant that answers questions strictly using my own handwritten Markdown notes (credit to *30 Days of Python*).
-- GitHub link: https://github.com/Asabeneh/30-Days-Of-Python
-- The goal is to help beginners deepen their understanding of fundamental concepts.
-- Answers are grounded in my own notes that have been checked and reviewed.
+A deployed full-stack **Python AI study assistant** that answers questions *grounded in user-provided notes* using a retrieval-augmented generation (RAG) pipeline. The system is designed to prevent hallucinations by restricting responses strictly to relevant retrieved content.
 
-This project is intentionally scoped to an intro-level Python course and prioritizes correctness, transparency, and system design over a larger scope.
+---
 
-## Motivation
-- Currently, many AI tools suffer from hallucination and provide answers without giving their source.
-- Many tools guess answers instead of letting the user know that they do not know.
+## 🚀 Overview
 
-This project explores how retrieval-based grounding (RAG) can help alleviate some of these issues.
+Large language models can generate convincing but incorrect answers.
+**Python AI Agent** addresses this problem by combining vector search with controlled prompting so that responses are generated **only** from existing notes.
 
-## High-Level Architecture
-The project architecture is layered and follows this flow:
+The application is deployed with a **FastAPI backend** and a **static frontend**, emphasizing correctness, transparency, and backend system design.
 
-Frontend → Backend → Retrieval + Prompting → Response
+---
 
-- The frontend only handles UI and UX
-- The backend only calls the AI agent method
-- The frontend never calls any part of the AI agent
+## 🧠 Features
 
-## Backend Design
+- Retrieval-augmented generation (RAG) using ChromaDB vector search
+- Context-aware responses grounded in user notes
+- Pytest-based unit tests for APIs and retrieval logic
+- Backend performance optimizations through persisted embeddings
+- Deployed backend and frontend with environment-based configuration
+- Transparent fallback behavior when no relevant content is found
 
-### Request Flow
-1. User submits a question from the frontend
-2. The backend receives the request via the FastAPI `/ask` endpoint
-3. Relevant notes are retrieved
-4. A two-part prompting strategy is applied
-5. The answer is returned to the frontend
+---
 
-## Two-Part Prompting
-1. The first step answers the question using only the retrieved notes (strict prompting).
-2. The second step refines the answer using the notes, the first draft, and a flexible prompt.
+## ⚙️ Tech Stack
 
-This separation helps reduce hallucinations while maintaining readability.
+- **Backend:** Python, FastAPI
+- **Vector Store:** ChromaDB
+- **Frontend:** HTML, CSS, JavaScript
+- **AI Pattern:** Retrieval-Augmented Generation (RAG)
+- **Testing:** Pytest
+- **Deployment:** Railway (backend), Vercel (frontend)
 
-## Failure Handling
-The system is designed to fail gracefully and remain transparent.
+---
 
-Example scenarios:
-1. If no retrieved notes are similar to the question, the assistant informs the user that the topic is not covered.
-2. If there is no response from Part 1, the second part does not run.
-3. Out-of-scope questions are answered transparently rather than guessed.
+## 🗺️ High-Level Architecture
 
-The priority was trust and transparency while still balancing a somewhat complete answer when possible.
+Frontend → FastAPI Backend → Vector Search (ChromaDB) → Prompt Logic → Response
 
-## Frontend Overview
+1. User submits a question
+2. Backend retrieves the most relevant note embeddings
+3. Prompt is constructed using retrieved context
+4. The model generates a grounded response
+5. Response is returned to the frontend
 
-### Pages
-1. **Home Page**: Details the scope and purpose of the project and explains how to use the assistant.
-2. **Study Page**: Keeps a record of the messages between the user and the assistant and provides a space for the user to ask questions.
-3. **Credits Page**: Credits the author of *30 Days of Python*, explains the tech stack used, and gives credit to OpenAI.
+---
 
-### UI & Styling
-- CSS Flexbox layout
-- Calm matcha-themed café color palette
-- Noto Sans JP font
-- Rounded components and reduced visual noise
+## 📥 Quick Start (Local)
 
-### Chat Interface Features
-- Scrollable chat history
-- Messages appended to the chat history
-- Distinct colors for user and assistant messages
-- Auto-growing textarea
-- Custom scrollbar styling
+### 1) Clone the Repository
 
-## Tech Stack
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Python, FastAPI, ChromaDB (to store embeddings)
-- **AI approach**: RAG, multi-phase prompting
-- **Notes**: Markdown files are used to improve AI performance (Markdown files are lightweight and convey meaning effectively)
+git clone https://github.com/Benjamin-Chong/Python-AI-Agent.git  
+cd Python-AI-Agent
 
-## Project Scope & Limitations
-- Focused on beginner-level Python questions
-- Answers are transparent when information does not come from notes
-- No authentication or user persistence
-- Not intended to replace courses
-- The agent may refuse to answer certain questions if the relevant concept is not retrieved, even when the information exists elsewhere in the notes. This is an intentional design choice to prioritize grounded responses over completeness. A future improvement would involve splitting notes into smaller, concept-level chunks to improve retrieval recall without weakening trust guarantees.
+### 2) Install Dependencies
 
-## Future Improvements
-I created a list of potential features that could be added to the project if development were continued:
-- Expand note coverage
-- Increase the quality of existing notes
-- Add automated tests
-- Refine documentation
+pip install -r requirements.txt
 
-## Why This Project
-This was an exploration project to build a full-stack application paired with AI features.
+### 3) Run the Backend
 
-## Performance Optimization
-- Persisting the vector store significantly improves performance by avoiding repeated ingestion work.
-- In local benchmarks, rebuilding the vector store on each request averaged ~11.9s, while reusing a persisted store averaged ~5.3s, representing an approximate 55% reduction in response latency.
-- This optimization becomes more impactful as the document corpus grows, since embedding computation and index construction scale with the number of files and chunks.
+uvicorn backend.main:app --reload
 
-## Getting Started
-1. Clone this repository.
+### 4) Run the Frontend
 
-![Clone button](assets/clone.png)
+python -m http.server 5500
 
-*Click on the `<> Code` button first.*
+Open your browser at:  
+http://localhost:5500/frontend/index.html
 
-2. Download all required packages from `requirements.txt`.
-3. Open the project in your preferred IDE.
-4. Start the frontend and backend servers using the following commands:
-   - Backend: `uvicorn backend.main:app --reload`
-   - Frontend: `python -m http.server 5500`
-   - Open: `http://localhost:5500/frontend/homepage.html`
-5. Navigate to the study page using the green button labeled **Start Studying** or use the navigation bar at the top.
+---
 
-![Start Study button](assets/study.png)
+## 💡 Usage
 
-6. Enter any beginner Python-related question (allow 5–10 seconds for a response):
+1. Open the home page
+2. Click **Start Studying**
+3. Ask a question in the chat interface
+4. The assistant responds using only relevant notes
 
-![Question Box](assets/question.png)
+If no relevant content is found, the system responds transparently instead of hallucinating.
 
-*The answer will appear in the bottom box.*
+---
 
-7. The question and answer pair will be appended to the chat history on the left.
+## 🧪 Running Tests
 
-![Chat History](assets/chathistory.png)
-
-## Tests
-I created a few tests focusing on important parts of the program:
-- Testing the connection to the API
-- Ensuring the agent refuses to answer questions outside of the project scope
-- Verifying that grounded questions return acceptable responses
-
-## Running Tests
-```bash
+pip install -r requirements.txt  
 python -m pytest
-```
-### Notes on System Limitations
-- This project does not cross-reference information across separate note chunks.
-- For example, a question like “What is the difference between a string and an integer?” may be declined if those concepts are defined in separate notes.
-- To improve trust and reduce hallucinations, the assistant only answers questions when all required information is present within the retrieved context.
-- Some comparison questions work when the relevant concepts are documented together.
-- For example, “What is the difference between a for loop and a while loop?” is answerable because both concepts are covered within the same note.
+
+Tests validate:
+- REST endpoint behavior
+- Retrieval and vector search logic
+- Correct handling of edge cases
+
+---
+
+## 📌 Deployment
+
+- Backend deployed on **Railway**
+- Frontend deployed on **Vercel**
+- Environment-based secrets and configuration used for production
+- CORS and production startup commands configured for deployment
+
+---
+
+## 📚 Motivation
+
+This project explores how retrieval-augmented generation can improve trustworthiness in AI systems by grounding responses in real, user-provided data rather than relying solely on generative behavior.
+
+---
+
+## ⚠️ Limitations
+
+- No user authentication or persistence
+- Answer quality depends on the quality and scope of notes
+- Limited to single-user local usage in its current form
+
+---
+
+## 🛠️ Future Improvements
+
+- User authentication and note persistence
+- Expanded note indexing and retrieval strategies
+- UI enhancements and improved interaction flow
+- CI integration for automated testing
+
+---
+
+## 📸 Demo
+
+![Home Page](screenshots/home.png)
+![Study Interface](screenshots/study.png)
+
+---
 
 ## Live Demo
--Frontend: https://python-ai-agent-snowy.vercel.app
--Backend: https://python-ai-agent-production.up.railway.app
 
-> Note: The backend is hosted on Railway’s free tier and may take a few minutes to respond on first request due to cold starts.
-> Testing took about 2-3 minutes for the agent to build on the backend.
+- Frontend **(Vercel)**: https://python-ai-agent-snowy.vercel.app/
+- Backend **(Railway)**: 
+
+## 📝 License
+
+This project is licensed under the MIT License.
