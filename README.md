@@ -120,6 +120,7 @@ This project explores how retrieval-augmented generation can improve trustworthi
 - No user authentication or persistence
 - Answer quality depends on the quality and scope of notes
 - Limited to single-user local usage in its current form
+- The agent may refuse to answer certain questions if the relevant concept is not retrieved, even when the information exists elsewhere in the notes. This is an intentional design choice to prioritize grounded responses and avoid hallucination. A future improvement would involve splitting notes into smaller, concept-level chunks to improve retrieval recall without weakening trust guarantees.
 
 ---
 
