@@ -4,6 +4,12 @@ A deployed full-stack **Python AI study assistant** that answers questions *grou
 
 ---
 
+## Live Demo
+
+- Frontend **(Vercel)**: https://python-ai-agent-snowy.vercel.app
+
+---
+
 ## 🚀 Overview
 
 Large language models can generate convincing but incorrect answers.
@@ -133,10 +139,6 @@ This project explores how retrieval-augmented generation can improve trustworthi
 
 ---
 
-## Live Demo
-
-- Frontend **(Vercel)**: https://python-ai-agent-snowy.vercel.app/
-- Backend **(Railway)**: 
 
 ## 📝 License
 
