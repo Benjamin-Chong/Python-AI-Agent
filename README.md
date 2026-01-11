@@ -135,8 +135,10 @@ This project explores how retrieval-augmented generation can improve trustworthi
 
 ## 📸 Demo
 
-![Home Page](screenshots/home.png)
-![Study Interface](screenshots/study.png)
+![Home Page](assets/homepage.png)
+**Home Page**
+![Study Interface](assets/study.png)
+**Study Page**
 
 ---
 
