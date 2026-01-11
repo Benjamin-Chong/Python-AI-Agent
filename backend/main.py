@@ -10,7 +10,7 @@ app = FastAPI() #creates a fastAPI application instance
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://python-ai-agent-git-main-benjamin-chongs-projects-8f4e574f.vercel.app"],  # frontend origin     
+    allow_origins=["https://python-ai-agent-snowy.vercel.app"],  # frontend origin     
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
