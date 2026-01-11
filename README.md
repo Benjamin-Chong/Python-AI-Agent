@@ -7,6 +7,7 @@ A deployed full-stack **Python AI study assistant** that answers questions *grou
 ## Live Demo
 
 - Frontend **(Vercel)**: https://python-ai-agent-snowy.vercel.app
+- Note: The live demo is hosted on a free-tier service and may be temporarily unavailable due to platform limitations.
 
 ---
 
